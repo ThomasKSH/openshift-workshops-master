@@ -2,7 +2,7 @@
 
 Most useful applications are "stateful" or "dynamic" in some way, and this is
 usually achieved with a database or other data storage. In this next lab we are
-going to add MongoDB to our `nationalparks` project and then rewire our
+going to add MongoDB to our `userXX-nationalparks` project and then rewire our
 application to talk to the database using environment variables.
 
 We are going to use the MongoDB image that is included with OpenShift.
@@ -131,7 +131,7 @@ our "old" application and stood up a "new" instance.
 If you refresh your application:
 
 ````
-http://openshift3nationalparks-nationalparks.apps.10.2.2.2.xip.io/
+http://openshift3nationalparks-nationalparks.apps.pixy.io/
 ````
 
 You'll notice that the parks suddenly are showing up. That's really cool!
@@ -142,7 +142,7 @@ define connections to dependent systems.  This allows for application
 portability across different environments.  The source file that performs the
 connection as well as creates the database schema can be viewed here:
 
-[DBConnection.java](http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks/blob/master/src/main/java/org/openshift/parks/mongo/DBConnection.java)
+[DBConnection.java](https://gitlab.com/gshipley/nationalparks/blob/master/src/main/java/org/openshift/parks/mongo/DBConnection.java)
 
 In short summary: By referring to environment variables to connect to services
 (like databases), it can be trivial to promote applications throughout different

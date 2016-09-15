@@ -42,8 +42,8 @@ of saying that we are going to deploy a map of National Parks.
 The first thing you need to do is create a new project called `nationalparks`:
 
 ````
-$ oc new-project nationalparks
-Now using project "nationalparks" on server "https://10.2.2.2:8443".
+$ oc new-project userXX-nationalparks       // Where XX is your usernumber
+Now using project "userXX-nationalparks" on server "https://pixy.io".
 
 You can add applications to this project with the 'new-app' command. For example, try:
 
@@ -58,17 +58,11 @@ OpenShift can work with Git repositories on GitHub, GitLab,... You can even regi
 webhooks to initiate OpenShift builds triggered by any update to the application
 code on your Git hosting solution.
 
-The repository that we are going to use is already cloned in the internal GitLab repository
-and located at the following URL:
+The repository that we are going to use is located at the following URL:
 
-[http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks.git](http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks.git "http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks.git")
+[https://gitlab.com/gshipley/nationalparks.git](https://gitlab.com/gshipley/nationalparks.git "https://gitlab.com/gshipley/nationalparks.git")
 
-You can log in to the embedded GitLab server using any of the 2 accounts available:
 
-- dev/password
-- root/password
-
-Later in the lab, we want you to make a code change and then rebuild your application.
 If you are familiar with Java EE applications, you will notice that there is
 nothing special about our application - it is a standard, plain-old JEE
 application.
@@ -79,10 +73,10 @@ application.
 While the `new-app` command makes it very easy to get OpenShift to build code
 from a GitHub/GitLab repository into a Docker image, we can also use the web console to
 do the same thing -- it's not all command line and green screen where we're
-going! Since for this lab you have your own GitLab repository let's use it with
+going! Let's use the provide gitlab repository with
 OpenShift's WildFly S2I image.
 
-In the OpenShift web console, find your `nationalparks` project, and then
+In the OpenShift web console, find your `userXX-nationalparks` project, and then
 click the *"Add to Project"* button. You will see a number of runtimes that you
 can choose from, but you will want to select the one titled
 `wildfly:latest`. As you might guess, this is going to use an S2I
@@ -94,19 +88,16 @@ After you click *"Add to Project"*, on the next screen you will need to enter a
 name and a Git repository URL. For the name, enter `openshift3nationalparks`, and for
 the Git repository URL, enter:
 
-	http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks.git
+	https://gitlab.com/gshipley/nationalparks.git
 
 **Note:** All of these runtimes shown are made available via *Templates*, which
 will be discussed in a later lab.
 
 ![Runtimes](images/new_mlbparks_1.png)
 
-**NOTE:** To speed build process, a Sonatype Nexus in included in the VM that will cache
-your dependencies as you pull them down. To use it, you need to click on *Show advanced routing, build, and
-deployment options*, scroll down to *Build Configuration*, add an environment variable named *MAVEN_MIRROR_URL*
-with value *http://nexus.ci:8081/content/groups/public*
 
-![Runtimes](images/new_mlbparks_2.png)
+
+
 
 You can then hit the button labeled *"Create"*. Then click *Continue to
 overview*. You will see this in the web console:
@@ -166,13 +157,13 @@ Where you should see something like the following:
 
 ````
 NAME                      HOST/PORT                                                     PATH  SERVICE                   LABELS ...
-openshift3nationalparks   openshift3nationalparks-nationalparks.apps.10.2.2.2.xip.io          openshift3nationalparks   app=openshift3nationalparks
+openshift3nationalparks   openshift3nationalparks-nationalparks.apps.pixy.io          openshift3nationalparks   app=openshift3nationalparks
 ````
 
 In the above example, the URL is:
 
 ````
-http://openshift3nationalparks-nationalparks.apps.10.2.2.2.xip.io
+http://openshift3nationalparks-nationalparks.apps.pixy.io
 ````
 
 Verify your application is working by viewing the URL in a web browser.  You should see the following:

@@ -27,7 +27,7 @@ project:
 
 ````
 $ oc new-project nationalparks-template
-$ oc create -f http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks/raw/master/nationalparks-template-wildfly.json
+$ oc create -f https://gitlab.com/jorgemoralespou/openshift3nationalparks/raw/master/nationalparks-template-wildfly.json
 ````
 
 Now we have access to the application template in our project.  As a side note, administrators have the capability to add templates to the general *openshift* project which will in turn provide an application template to any user on the system.
@@ -35,7 +35,7 @@ Now we have access to the application template in our project.  As a side note, 
 Are you ready for the magic command?  Here it is:
 
 ````
-$ oc new-app nationalparks-wildfly --name=nationalparks -p GIT_URI=http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks.git -p MAVEN_MIRROR_URL=http://nexus.ci:8081/content/groups/public
+$ oc new-app nationalparks-wildfly --name=nationalparks -p GIT_URI=https://gitlab.com/gshipley/nationalparks.git 
 ````
 
 You will see the following output:
@@ -50,9 +50,8 @@ You will see the following output:
      * With parameters:
         * APPLICATION_NAME=nationalparks
         * APPLICATION_HOSTNAME=
-        * GIT_URI=http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks.git
+        * GIT_URI=http://gitlab.apps.pixy.io/dev/openshift3nationalparks.git
         * GIT_REF=master
-        * Maven mirror url=http://nexus.ci:8081/content/groups/public
         * MONGODB_DATABASE=root
         * MONGODB_NOPREALLOC=
         * MONGODB_SMALLFILES=
@@ -87,7 +86,7 @@ As a final exercise, look at the template that was used to create the
 resources for our *nationalparks* application.
 
 ````
-http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks/raw/master/nationalparks-template.json
+https://gitlab.com/jorgemoralespou/openshift3nationalparks/raw/master/nationalparks-template-wildfly.json
 ````
 
 **[End of Lab](/)**

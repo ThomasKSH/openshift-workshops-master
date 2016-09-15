@@ -85,14 +85,14 @@ The first thing we want to do is create a new *Project* called `guestbook`.
 Remember that Projects group resources together.
 
 ````
-$ oc new-project guestbook
+$ oc new-project userXX-guestbook     // where XX is your username
 ````
 
 The *new-project* command will automatically switch you to use that *Project*. You
 will see something like the following:
 
 ````
-Now using project "guestbook" on server "https://10.2.2.2:8443".
+Now using project "userXX=guestbook" on server "https://pixy.io:8443".
 
 You can add applications to this project with the 'new-app' command. For example, try:
 
@@ -149,7 +149,7 @@ already have it locally. You can check on the status of the image download and
 deployment by:
 
 1. Going into the web console
-1. Select Project `guestbook`
+1. Select Project `userXX-guestbook`
 1. Select *Browse*
 1. Select *Pods*
 

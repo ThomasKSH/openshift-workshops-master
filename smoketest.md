@@ -42,8 +42,8 @@ Once you issue the `oc login` command, you will be prompted for the username and
 password combination for your user account:
 
 ````
-Username: dev
-Password: dev
+Username: (The username provided to you)
+Password: (The password provided to you)
 ````
 
 Once you have authenticated to the OpenShift server, you will see the
@@ -52,7 +52,7 @@ following confirmation message:
 ````
 Login successful.
 
-Using project "smoke".    
+Using project "userXX-smoke".    
 ````
 
 Congratulations, you are now authenticated to the OpenShift server. The
@@ -82,13 +82,13 @@ The first thing we want to do is switch to the *smoke* project. You
 can do this with the following command:
 
 ````
-$ oc project smoke
+$ oc project userXX-smoke (where XX is your username)
 ````
 
 You will see the following confirmation message:
 
 ````
-Now using project "smoke" on server "https://pixy.io:8443".
+Now using project "userXX-smoke" on server "https://pixy.io:8443".
 ````
 
 The next thing we want to check is the routes associated with this project. A
@@ -125,8 +125,8 @@ https://pixy.io:8443
 The first screen you will see is the authentication screen.  Enter in the following credentials:
 
 ````
-Username: dev
-Password: dev
+Username: (The username provided to you)
+Password: (The password provided to you)
 ````
 
 ![OpenShift Login Screen](images/v3login.png)
