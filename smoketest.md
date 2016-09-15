@@ -9,7 +9,7 @@ order to login, we will use the `oc` command and then specify the server that we
 want to authenticate to.  Issue the following command:
 
 ````
-$ oc login 10.2.2.2:8443
+$ oc login pixy.io:8443
 ````
 
 **Note:** After entering in the above command, you may be prompted to accept the
@@ -35,7 +35,7 @@ server has an invalid x.509 certificate.  If you receive this error, enter in
 the following command:
 
 ````
-$ oc login 10.2.2.2:8443 --insecure-skip-tls-verify=true
+$ oc login pixy.io:8443 --insecure-skip-tls-verify=true
 ````
 
 Once you issue the `oc login` command, you will be prompted for the username and
@@ -88,7 +88,7 @@ $ oc project smoke
 You will see the following confirmation message:
 
 ````
-Now using project "smoke" on server "https://10.2.2.2:8443".
+Now using project "smoke" on server "https://pixy.io:8443".
 ````
 
 The next thing we want to check is the routes associated with this project. A
@@ -109,7 +109,7 @@ You should see output similar to the following:
 
 ````
 NAME    HOST/PORT                     PATH   SERVICE   LABELS  INSECURE POLICY  TLS TERMINATION
-smoke   smoke-smoke.10.2.2.2.xip.io   smoke  app=smoke      
+smoke   smoke-smoke.pixy.io.xip.io   smoke  app=smoke      
 ````
 
 ###**The Web Console**
@@ -119,7 +119,7 @@ perform various tasks via a browser.  To get a feel for how the web console
 works, open your browser and go to the following URL:
 
 ````
-https://10.2.2.2:8443
+https://pixy.io:8443
 ````
 
 The first screen you will see is the authentication screen.  Enter in the following credentials:

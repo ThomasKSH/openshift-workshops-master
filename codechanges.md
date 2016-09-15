@@ -19,7 +19,7 @@ in the following image:
 Once you have the URL copied to your clipboard, navigate to the code repository
 that you have on your local GitLab:
 
-    http://gitlab.apps.10.2.2.2.xip.io/dev/openshift3nationalparks
+    http://gitlab.apps.pixy.io/dev/openshift3nationalparks
 
 **NOTE:** The credentials in your local GitLab are username: `dev` and password: `password`
 
